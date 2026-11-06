@@ -1,0 +1,50 @@
+{
+  "name": "@trysac/changelog-conventional",
+  "version": "0.0.0",
+  "description": "Compute the next semantic version and write a Keep a Changelog section from Conventional Commits 1.0, with an injectable git port",
+  "license": "MIT",
+  "author": "Miguel Gomez",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trysac/u081-changelog-conventional.git"
+  },
+  "homepage": "https://github.com/Trysac/u081-changelog-conventional#readme",
+  "bugs": {
+    "url": "https://github.com/Trysac/u081-changelog-conventional/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "biome ci .",
+    "format": "biome format --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --coverage",
+    "check": "node scripts/check.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.4",
+    "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.0.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}
