@@ -1,7 +1,6 @@
 # changelog-conventional
 
-[![npm version](https://img.shields.io/npm/v/@trysac/changelog-conventional.svg)](https://www.npmjs.com/package/@trysac/changelog-conventional)
-[![license: MIT](https://img.shields.io/npm/l/@trysac/changelog-conventional.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/Trysac/u081-changelog-conventional/actions/workflows/ci.yml/badge.svg)](https://github.com/Trysac/u081-changelog-conventional/actions/workflows/ci.yml)
 
 Computes the next SemVer version and renders or updates a Keep a Changelog section from Conventional Commits 1.0.0 messages, reading git only through an injectable port.
@@ -12,9 +11,15 @@ Version numbers and release notes are often chosen by hand, so breaking changes 
 
 ## Install
 
+Not published to npm yet. Build it from a clone, then install it from the local path:
+
 ```sh
-npm install @trysac/changelog-conventional
+git clone https://github.com/Trysac/u081-changelog-conventional.git
+cd u081-changelog-conventional && npm ci && npm run build
+cd ../your-project && npm install ../u081-changelog-conventional
 ```
+
+Imports keep the package name: `import { ... } from "@trysac/changelog-conventional"`.
 
 Requires Node.js 20 or newer. The package ships ES modules with TypeScript declarations.
 
